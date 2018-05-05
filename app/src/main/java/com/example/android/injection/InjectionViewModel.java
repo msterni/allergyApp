@@ -5,18 +5,18 @@ import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 
 import com.example.android.injection.DatabaseObjects.Injection;
-import com.example.android.injection.DatabaseObjects.InjectionRepository;
+import com.example.android.injection.DatabaseObjects.AllergyRepository;
 
 import java.util.List;
 
 public class InjectionViewModel extends AndroidViewModel {
 
-    private InjectionRepository mRepository;
+    private AllergyRepository mRepository;
     private LiveData<List<Injection>> mAllInjections;
 
     public InjectionViewModel(Application application) {
         super(application);
-        mRepository = new InjectionRepository(application);
+        mRepository = new AllergyRepository(application);
         mAllInjections = mRepository.getAllInjections();
     }
     public LiveData<List<Injection>> getAllInjections() {

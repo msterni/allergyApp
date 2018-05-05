@@ -15,7 +15,7 @@ limitations under the License. -->
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -31,8 +31,6 @@ limitations under the License. -->
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <!-- The default font for RecyclerView items is too small.
-    The margin is a simple delimiter between the injections. -->
     <style name="medicine">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">26dp</item>

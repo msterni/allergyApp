@@ -8,4 +8,5 @@
     <string name="medicine_string">Medicine</string>
     <string name="dosage_string">Dosage</string>
     <string name="date_string">Date</string>
+    <string name="add_medicine">Add Medicine</string>
 </resources>

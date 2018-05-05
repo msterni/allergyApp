@@ -41,7 +41,7 @@ public class InjectionListAdapter extends RecyclerView.Adapter<InjectionListAdap
     @Override
     public void onBindViewHolder(InjectionViewHolder holder, int position) {
         Injection current = mInjections.get(position);
-        holder.medicineItemView.setText(current.getMedicine());
+        holder.medicineItemView.setText(String.valueOf(current.getMedicine()));
         holder.dosageItemView.setText(String.valueOf(current.getDosage()));
         holder.dateItemView.setText(current.getDate());
     }

@@ -6,14 +6,14 @@ import android.os.AsyncTask;
 
 import java.util.List;
 
-public class InjectionRepository {
+public class AllergyRepository {
 
     private InjectionDao mInjectionDao;
     private LiveData<List<Injection>> mAllInjections;
 
-    public InjectionRepository(Application application) {
-        InjectionDatabase db = InjectionDatabase.getDatabase(application);
-        mInjectionDao = db.wordDao();
+    public AllergyRepository(Application application) {
+        AllergyDatabase db = AllergyDatabase.getDatabase(application);
+        mInjectionDao = db.injectionDao();
         mAllInjections = mInjectionDao.getInjections();
     }
     public LiveData<List<Injection>> getAllInjections() {

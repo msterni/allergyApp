@@ -7,14 +7,14 @@ import android.arch.persistence.room.Query;
 import java.util.List;
 
 @Dao
-public interface InjectionDao {
+public interface MedicineDao {
 
-    @Query("SELECT * from injection_table ORDER BY medicine ASC")
-    LiveData<List<Injection>> getInjections();
+    @Query("SELECT * from medicine_table ORDER BY mName ASC")
+    LiveData<List<Medicine>> getMedicines();
 
     @Insert
-    void insert(Injection injection);
+    void insert(Medicine medicine);
 
-    @Query("DELETE FROM injection_table")
+    @Query("DELETE FROM medicine_table")
     void deleteAll();
 }

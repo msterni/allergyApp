@@ -71,8 +71,16 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        return id == R.id.action_settings || super.onOptionsItemSelected(item);
+        switch (item.getItemId()){
+            case R.id.action_settings:
+                return true;
+            case R.id.action_add_medicine:
+                Intent intent = new Intent(this, NewMedicineActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                return true;
+        }
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -83,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
             String medicine = unpacked[0];
             Double dosage = Double.parseDouble(unpacked[1]);
             String date = unpacked[2];
-            Injection injection = new Injection(medicine,dosage,date);
+            Injection injection = new Injection(Integer.parseInt(medicine),dosage,date);
             mInjectionViewModel.insert(injection);
         } else {
             Toast.makeText(
