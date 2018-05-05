@@ -1,11 +1,11 @@
-package com.example.android.roomwordssample;
+package com.example.android.injection;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 
-import com.example.android.roomwordssample.DatabaseObjects.Injection;
-import com.example.android.roomwordssample.DatabaseObjects.InjectionRepository;
+import com.example.android.injection.DatabaseObjects.Injection;
+import com.example.android.injection.DatabaseObjects.InjectionRepository;
 
 import java.util.List;
 

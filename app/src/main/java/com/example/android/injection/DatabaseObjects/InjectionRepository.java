@@ -1,4 +1,4 @@
-package com.example.android.roomwordssample.DatabaseObjects;
+package com.example.android.injection.DatabaseObjects;
 
 import android.app.Application;
 import android.arch.lifecycle.LiveData;

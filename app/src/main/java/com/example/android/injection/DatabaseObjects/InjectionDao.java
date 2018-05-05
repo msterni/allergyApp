@@ -1,4 +1,4 @@
-package com.example.android.roomwordssample.DatabaseObjects;
+package com.example.android.injection.DatabaseObjects;
 
 /*
  * Copyright (C) 2017 Google Inc.

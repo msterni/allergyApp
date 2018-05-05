@@ -1,4 +1,4 @@
-package com.example.android.roomwordssample;
+package com.example.android.injection;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.android.roomwordssample.DatabaseObjects.Injection;
+import com.example.android.injection.DatabaseObjects.Injection;
 
 import java.util.List;
 

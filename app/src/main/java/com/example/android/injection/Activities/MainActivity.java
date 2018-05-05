@@ -1,4 +1,5 @@
-package com.example.android.roomwordssample.Activities;
+package com.example.android.injection.Activities;
+import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
@@ -14,20 +15,21 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.android.roomwordssample.Converters;
-import com.example.android.roomwordssample.DatabaseObjects.Injection;
-import com.example.android.roomwordssample.InjectionListAdapter;
-import com.example.android.roomwordssample.InjectionViewModel;
-import com.example.android.roomwordssample.R;
+import com.example.android.injection.Converters;
+import com.example.android.injection.DatabaseObjects.Injection;
+import com.example.android.injection.InjectionListAdapter;
+import com.example.android.injection.InjectionViewModel;
+import com.example.android.injection.R;
 
 import java.util.List;
 
 
-public class MainActivity_copy extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     public static final int NEW_WORD_ACTIVITY_REQUEST_CODE = 1;
     private InjectionViewModel mInjectionViewModel;
     private Converters con;
+    private LiveData<List<Injection>> injections;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +57,7 @@ public class MainActivity_copy extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity_copy.this, NewInjectionActivity.class);
+                Intent intent = new Intent(MainActivity.this, NewInjectionActivity.class);
                 startActivityForResult(intent, NEW_WORD_ACTIVITY_REQUEST_CODE);
             }
         });

@@ -1,4 +1,4 @@
-package com.example.android.roomwordssample.DatabaseObjects;
+package com.example.android.injection.DatabaseObjects;
 
 /*
  * Copyright (C) 2017 Google Inc.
@@ -85,11 +85,13 @@ public abstract class InjectionDatabase extends RoomDatabase {
             // Start the app with a clean database every time.
             // Not needed if you only populate on creation.
             mDao.deleteAll();
-
-            Injection injection = new Injection("Hello", 0.1, "11/11/11");
-            mDao.insert(injection);
-            injection = new Injection("World", 0.1, "11/11/11");
-            mDao.insert(injection);
+            for (int i=0; i<15; i++){
+                Injection injection = new Injection(
+                        "Lekarstwo" + String.valueOf(i),
+                        i/10.0,
+                        "2018-05-" + String.valueOf(i));
+                mDao.insert(injection);
+            }
             return null;
         }
     }

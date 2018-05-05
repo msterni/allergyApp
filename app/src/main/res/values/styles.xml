@@ -33,12 +33,26 @@ limitations under the License. -->
 
     <!-- The default font for RecyclerView items is too small.
     The margin is a simple delimiter between the injections. -->
-    <style name="word_title">
+    <style name="medicine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">26dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingLeft">8dp</item>
+    </style>
+    <style name="dosage">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">26dp</item>
         <item name="android:textSize">24sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:layout_marginBottom">6dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingRight">8dp</item>
+    </style>
+    <style name="date">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_gravity">center</item>
         <item name="android:paddingLeft">8dp</item>
     </style>
 

@@ -1,4 +1,4 @@
-package com.example.android.roomwordssample.Activities;
+package com.example.android.injection.Activities;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
@@ -14,9 +14,9 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.android.roomwordssample.Converters;
-import com.example.android.roomwordssample.DateSetter;
-import com.example.android.roomwordssample.R;
+import com.example.android.injection.Converters;
+import com.example.android.injection.DateSetter;
+import com.example.android.injection.R;
 
 import java.util.Calendar;
 import java.util.Locale;
