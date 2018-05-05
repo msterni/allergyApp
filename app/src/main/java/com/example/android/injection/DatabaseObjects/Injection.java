@@ -4,14 +4,6 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
-//@Entity(tableName = "injection_table")
-//public class Injection{
-//    @PrimaryKey
-//    @NonNull
-//    @ColumnInfo(name="injection")
-//    private Date
-//}
-
 @Entity(tableName = "injection_table")
 public class Injection {
 
