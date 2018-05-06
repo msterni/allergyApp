@@ -6,7 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.android.injection.DatabaseObjects.AllergyRepository;
 import com.example.android.injection.DatabaseObjects.Injection;
+import com.example.android.injection.DatabaseObjects.MedicineDao;
 
 import java.util.List;
 

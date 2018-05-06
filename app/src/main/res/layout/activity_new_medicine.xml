@@ -20,12 +20,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/medicine_string"
+                android:text="@string/medicine_name"
                 android:id="@+id/textView" />
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/edit_medicine" />
+                android:id="@+id/edit_medicine_name" />
         </TableRow>
 
         <TableRow
@@ -37,37 +37,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/dosage_string"
+                android:text="@string/medicine_concentration"
                 android:id="@+id/textView2" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:inputType="numberDecimal"
                 android:layout_height="wrap_content"
-                android:id="@+id/edit_dosage" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/date_string"
-                android:id="@+id/textView3" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:focusable="true"
-                android:inputType="date"
-                android:ems="10"
-                android:id="@+id/edit_date"
-                tools:ignore="LabelFor" />
+                android:id="@+id/edit_concentration" />
         </TableRow>
     </TableLayout>
 

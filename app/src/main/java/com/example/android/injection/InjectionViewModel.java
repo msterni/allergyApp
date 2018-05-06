@@ -23,6 +23,6 @@ public class InjectionViewModel extends AndroidViewModel {
         return mAllInjections;
     }
     public void insert(Injection injection) {
-        mRepository.insert(injection);
+        mRepository.insertInjection(injection);
     }
 }

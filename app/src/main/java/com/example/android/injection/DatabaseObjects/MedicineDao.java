@@ -12,6 +12,9 @@ public interface MedicineDao {
     @Query("SELECT * from medicine_table ORDER BY mName ASC")
     LiveData<List<Medicine>> getMedicines();
 
+    @Query("SELECT * from medicine_table")
+    List<Medicine> getMedicineList();
+
     @Insert
     void insert(Medicine medicine);
 

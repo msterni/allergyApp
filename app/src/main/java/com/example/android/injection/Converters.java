@@ -24,6 +24,9 @@ public class Converters {
     public String mergeStrings(String a, String b, String c){
         return a+"|"+b+"|"+c;
     }
+    public String mergeStrings(String a, String b){
+        return a+"|"+b;
+    }
     public String[] unpackStrings(String value){
         return value.split("\\|");
     }

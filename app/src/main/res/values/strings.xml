@@ -9,4 +9,6 @@
     <string name="dosage_string">Dosage</string>
     <string name="date_string">Date</string>
     <string name="add_medicine">Add Medicine</string>
+    <string name="medicine_name">Name</string>
+    <string name="medicine_concentration">Concentration</string>
 </resources>

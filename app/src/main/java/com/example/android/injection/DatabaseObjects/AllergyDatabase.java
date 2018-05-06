@@ -68,7 +68,7 @@ public abstract class AllergyDatabase extends RoomDatabase {
 //                        String.valueOf(i),
 //                        String.valueOf(r.nextInt(1))
 //                );
-//                medDao.insert(medicine);
+//                medDao.insertInjection(medicine);
 //            }
 //            // clean Injections
 //            injDao.deleteAll();
@@ -77,7 +77,7 @@ public abstract class AllergyDatabase extends RoomDatabase {
 //                        i,
 //                        i/10.0,
 //                        "2018-05-" + String.valueOf(i));
-//                injDao.insert(injection);
+//                injDao.insertInjection(injection);
 //            }
 //            return null;
 //        }

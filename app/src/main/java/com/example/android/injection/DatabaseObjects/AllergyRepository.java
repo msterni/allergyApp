@@ -8,33 +8,59 @@ import java.util.List;
 
 public class AllergyRepository {
 
+//    private final List<Medicine> allMedicineList;
+    private MedicineDao mMedicineDao;
     private InjectionDao mInjectionDao;
     private LiveData<List<Injection>> mAllInjections;
+    private LiveData<List<Medicine>> allMedicine;
 
     public AllergyRepository(Application application) {
         AllergyDatabase db = AllergyDatabase.getDatabase(application);
         mInjectionDao = db.injectionDao();
+        mMedicineDao = db.medicineDao();
         mAllInjections = mInjectionDao.getInjections();
+        allMedicine = mMedicineDao.getMedicines();
+//        allMedicineList = mMedicineDao.getMedicineList();
     }
     public LiveData<List<Injection>> getAllInjections() {
         return mAllInjections;
     }
 
-    public void insert (Injection injection) {
-        new insertAsyncTask(mInjectionDao).execute(injection);
+    public void insertInjection(Injection injection) {
+        new insertInjAsync(mInjectionDao).execute(injection);
     }
 
-    private static class insertAsyncTask extends AsyncTask<Injection, Void, Void> {
+    public void insertMedicine (Medicine medicine){
+        new insertMedAsync(mMedicineDao).execute(medicine);
+    }
 
-        private InjectionDao mAsyncTaskDao;
+    public LiveData<List<Medicine>> getAllMedicine() {
+        return allMedicine;
+    }
+//    public List<Medicine> getAllMedicineList(){
+//        return allMedicineList;
+//    }
 
-        insertAsyncTask(InjectionDao dao) {
-            mAsyncTaskDao = dao;
+    private static class insertInjAsync extends AsyncTask<Injection, Void, Void> {
+        private InjectionDao mAsyncInjectionDao;
+        insertInjAsync(InjectionDao dao) {
+            mAsyncInjectionDao = dao;
         }
-
         @Override
         protected Void doInBackground(final Injection... params) {
-            mAsyncTaskDao.insert(params[0]);
+            mAsyncInjectionDao.insert(params[0]);
+            return null;
+        }
+    }
+
+    private static class insertMedAsync extends AsyncTask<Medicine,Void,Void>{
+        private MedicineDao medDao;
+        insertMedAsync(MedicineDao medicine) {
+            medDao = medicine;
+        }
+        @Override
+        protected Void doInBackground(Medicine... medicines) {
+            medDao.insert(medicines[0]);
             return null;
         }
     }
