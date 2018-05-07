@@ -1,4 +1,4 @@
-package com.example.android.injection;
+package TreatmentHistory;
 
 import android.content.Context;
 import android.support.annotation.LayoutRes;
@@ -9,10 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-
-import com.example.android.injection.DatabaseObjects.Medicine;
-
+import com.example.android.injection.R;
 import java.util.List;
+import TreatmentHistory.DatabaseObjects.Medicine;
 
 public class CustomArrayAdapter extends ArrayAdapter<String>{
 

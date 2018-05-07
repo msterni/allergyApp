@@ -1,13 +1,11 @@
-package com.example.android.injection;
+package TreatmentHistory;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
-
-import com.example.android.injection.DatabaseObjects.Injection;
-import com.example.android.injection.DatabaseObjects.AllergyRepository;
-
 import java.util.List;
+import TreatmentHistory.DatabaseObjects.AllergyRepository;
+import TreatmentHistory.DatabaseObjects.Injection;
 
 public class InjectionViewModel extends AndroidViewModel {
 

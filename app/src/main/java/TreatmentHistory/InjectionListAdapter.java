@@ -1,16 +1,14 @@
-package com.example.android.injection;
+package TreatmentHistory;
+
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import com.example.android.injection.DatabaseObjects.AllergyRepository;
-import com.example.android.injection.DatabaseObjects.Injection;
-import com.example.android.injection.DatabaseObjects.MedicineDao;
-
+import com.example.android.injection.R;
 import java.util.List;
+import TreatmentHistory.DatabaseObjects.Injection;
 
 public class InjectionListAdapter extends RecyclerView.Adapter<InjectionListAdapter.InjectionViewHolder> {
 

@@ -1,32 +1,21 @@
-package com.example.android.injection.Activities;
+package TreatmentHistory.Activities;
 
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListAdapter;
 import android.widget.Spinner;
-
-import com.example.android.injection.Converters;
-import com.example.android.injection.CustomArrayAdapter;
-import com.example.android.injection.DatabaseObjects.AllergyRepository;
-import com.example.android.injection.DatabaseObjects.Injection;
-import com.example.android.injection.DatabaseObjects.Medicine;
-import com.example.android.injection.DateSetter;
-import com.example.android.injection.InjectionViewModel;
-import com.example.android.injection.MedicineViewModel;
 import com.example.android.injection.R;
-
-import java.util.List;
+import TreatmentHistory.Converters;
+import TreatmentHistory.CustomArrayAdapter;
+import TreatmentHistory.DatabaseObjects.Medicine;
+import TreatmentHistory.DateSetter;
+import TreatmentHistory.MedicineViewModel;
 
 public class NewInjectionActivity extends AppCompatActivity {
     private EditText mDosageValue;

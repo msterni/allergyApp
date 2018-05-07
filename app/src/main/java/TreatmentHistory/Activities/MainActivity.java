@@ -1,10 +1,7 @@
-package com.example.android.injection.Activities;
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.Observer;
+package TreatmentHistory.Activities;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,19 +9,14 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
-
-import com.example.android.injection.Converters;
-import com.example.android.injection.DatabaseObjects.AllergyRepository;
-import com.example.android.injection.DatabaseObjects.Injection;
-import com.example.android.injection.DatabaseObjects.Medicine;
-import com.example.android.injection.InjectionListAdapter;
-import com.example.android.injection.InjectionViewModel;
-import com.example.android.injection.MedicineViewModel;
 import com.example.android.injection.R;
-
-import java.util.List;
+import TreatmentHistory.Converters;
+import TreatmentHistory.DatabaseObjects.Injection;
+import TreatmentHistory.DatabaseObjects.Medicine;
+import TreatmentHistory.InjectionListAdapter;
+import TreatmentHistory.InjectionViewModel;
+import TreatmentHistory.MedicineViewModel;
 
 
 public class MainActivity extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package com.example.android.injection.DatabaseObjects;
+package TreatmentHistory.DatabaseObjects;
 
 import android.arch.persistence.db.SupportSQLiteDatabase;
 import android.arch.persistence.room.Database;
@@ -43,45 +43,10 @@ public abstract class AllergyDatabase extends RoomDatabase {
             super.onOpen(db);
             // If you want to keep the data through app restarts,
             // comment out the following line.
-//            new PopulateDbAsync(INSTANCE).execute();
             new AddOneMedicine(INSTANCE).execute();
         }
     };
 
-//    private static class PopulateDbAsync extends AsyncTask<Void, Void, Void> {
-//
-//        private final InjectionDao injDao;
-//        private final MedicineDao medDao;
-//
-//        PopulateDbAsync(AllergyDatabase db) {
-//            medDao = db.medicineDao();
-//            injDao = db.injectionDao();
-//        }
-// {
-//            // clean medicines
-//            Random r = new Random();
-//
-//            medDao.deleteAll();
-//            for (int i=0; i<15; i++){
-//                Medicine medicine = new Medicine(
-//                        i,
-//                        String.valueOf(i),
-//                        String.valueOf(r.nextInt(1))
-//                );
-//                medDao.insertInjection(medicine);
-//            }
-//            // clean Injections
-//            injDao.deleteAll();
-//            for (int i=0; i<15; i++){
-//                Injection injection = new Injection(
-//                        i,
-//                        i/10.0,
-//                        "2018-05-" + String.valueOf(i));
-//                injDao.insertInjection(injection);
-//            }
-//            return null;
-//        }
-//    }
 
     private static class AddOneMedicine extends AsyncTask<Void,Void,Void>{
         private final MedicineDao medDao;
@@ -92,8 +57,10 @@ public abstract class AllergyDatabase extends RoomDatabase {
         }
         @Override
         protected Void doInBackground(final Void... params){
-            medDao.insert(new Medicine("asd", "0"));
-            injDao.insert(new Injection(1,0.1,"2018-11-11"));
+            medDao.deleteAll();
+            injDao.deleteAll();
+            medDao.insert(new Medicine("Medicine Name", "50%"));
+            injDao.insert(new Injection(1,0.1,"2017-11-11"));
             return null;
         }
     }

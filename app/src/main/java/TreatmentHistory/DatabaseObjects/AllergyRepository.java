@@ -1,4 +1,4 @@
-package com.example.android.injection.DatabaseObjects;
+package TreatmentHistory.DatabaseObjects;
 
 import android.app.Application;
 import android.arch.lifecycle.LiveData;
@@ -8,7 +8,6 @@ import java.util.List;
 
 public class AllergyRepository {
 
-//    private final List<Medicine> allMedicineList;
     private MedicineDao mMedicineDao;
     private InjectionDao mInjectionDao;
     private LiveData<List<Injection>> mAllInjections;
@@ -20,7 +19,6 @@ public class AllergyRepository {
         mMedicineDao = db.medicineDao();
         mAllInjections = mInjectionDao.getInjections();
         allMedicine = mMedicineDao.getMedicines();
-//        allMedicineList = mMedicineDao.getMedicineList();
     }
     public LiveData<List<Injection>> getAllInjections() {
         return mAllInjections;
@@ -37,9 +35,6 @@ public class AllergyRepository {
     public LiveData<List<Medicine>> getAllMedicine() {
         return allMedicine;
     }
-//    public List<Medicine> getAllMedicineList(){
-//        return allMedicineList;
-//    }
 
     private static class insertInjAsync extends AsyncTask<Injection, Void, Void> {
         private InjectionDao mAsyncInjectionDao;

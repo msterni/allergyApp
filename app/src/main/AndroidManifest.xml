@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Activities.MainActivity"
+            android:name="TreatmentHistory.Activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -18,7 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.NewInjectionActivity" />
-        <activity android:name=".Activities.NewMedicineActivity" />
+        <activity android:name="TreatmentHistory.Activities.NewInjectionActivity" />
+        <activity android:name="TreatmentHistory.Activities.NewMedicineActivity" />
     </application>
 </manifest>

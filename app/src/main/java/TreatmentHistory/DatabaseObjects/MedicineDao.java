@@ -1,4 +1,4 @@
-package com.example.android.injection.DatabaseObjects;
+package TreatmentHistory.DatabaseObjects;
 import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
