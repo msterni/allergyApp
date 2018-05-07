@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.example.android.injection.Converters;
 import com.example.android.injection.R;
 
-class NewMedicineActivity extends AppCompatActivity{
+public class NewMedicineActivity extends AppCompatActivity{
     private EditText mName;
     private EditText mConcentration;
     private Converters con;
