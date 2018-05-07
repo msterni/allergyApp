@@ -43,7 +43,7 @@ public abstract class AllergyDatabase extends RoomDatabase {
             super.onOpen(db);
             // If you want to keep the data through app restarts,
             // comment out the following line.
-            new AddOneMedicine(INSTANCE).execute();
+//            new AddOneMedicine(INSTANCE).execute();
         }
     };
 
@@ -57,8 +57,6 @@ public abstract class AllergyDatabase extends RoomDatabase {
         }
         @Override
         protected Void doInBackground(final Void... params){
-            medDao.deleteAll();
-            injDao.deleteAll();
             medDao.insert(new Medicine("Medicine Name", "50%"));
             injDao.insert(new Injection(1,0.1,"2017-11-11"));
             return null;

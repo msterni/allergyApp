@@ -11,4 +11,5 @@
     <string name="add_medicine">Add Medicine</string>
     <string name="medicine_name">Name</string>
     <string name="medicine_concentration">Concentration</string>
+    <string name="medicine_list">List of Medicine</string>
 </resources>

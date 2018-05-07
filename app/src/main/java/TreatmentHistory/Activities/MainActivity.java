@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         mInjectionViewModel.getAllInjections().observe(this, adapter::setInjections);
+        mMedicineViewModel.getAllMedicine().observe(this, adapter::setMedicine);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> {
@@ -64,9 +65,14 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.action_settings:
                 return true;
+            case R.id.action_medicine_list:
+                startActivity(
+                        new Intent(this, MedicineListActivity.class));
+                return true;
             case R.id.action_add_medicine:
-                Intent intent = new Intent(this, NewMedicineActivity.class);
-                startActivityForResult(intent, NEW_MEDICINE_ACTIVITY_REQUEST_CODE);
+                startActivityForResult(
+                        new Intent(this, NewMedicineActivity.class),
+                        NEW_MEDICINE_ACTIVITY_REQUEST_CODE);
                 return true;
             default:
                 return true;

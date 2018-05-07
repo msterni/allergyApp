@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.example.android.injection.R;
 import java.util.List;
 import TreatmentHistory.DatabaseObjects.Injection;
+import TreatmentHistory.DatabaseObjects.Medicine;
 
 public class InjectionListAdapter extends RecyclerView.Adapter<InjectionListAdapter.InjectionViewHolder> {
 
@@ -27,6 +28,7 @@ public class InjectionListAdapter extends RecyclerView.Adapter<InjectionListAdap
 
     private final LayoutInflater mInflater;
     private List<Injection> mInjections; // Cached copy of injections
+    private List<Medicine> mMedicine;
 
     public InjectionListAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
@@ -41,13 +43,27 @@ public class InjectionListAdapter extends RecyclerView.Adapter<InjectionListAdap
     @Override
     public void onBindViewHolder(InjectionViewHolder holder, int position) {
         Injection current = mInjections.get(position);
-        holder.medicineItemView.setText(String.valueOf(current.getMedicine()));
+        holder.medicineItemView.setText(GetMedicineNameWithId(current.getMedicine()));
         holder.dosageItemView.setText(String.valueOf(current.getDosage()));
         holder.dateItemView.setText(current.getDate());
     }
 
+    private String GetMedicineNameWithId(int medicineId) {
+        int count = mMedicine.size();
+        for (int i=0; i<count; i++){
+            if (mMedicine.get(i).uid == medicineId){
+                return mMedicine.get(i).getName();
+            }
+        }
+        return "Something went wrong officer!";
+    }
+
     public void setInjections(List<Injection> injections){
         mInjections = injections;
+        notifyDataSetChanged();
+    }
+    public void setMedicine(List<Medicine> medicines) {
+        mMedicine = medicines;
         notifyDataSetChanged();
     }
 

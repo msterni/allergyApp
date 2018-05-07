@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border"
+    android:layout_marginBottom="1dp">
+
+    <LinearLayout
+        android:layout_width="5dp"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/vertical_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/recycler_medicine_list_name"
+            style="@style/medicine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Purethal" />
+
+        <TextView
+            android:id="@+id/recycler_medicine_list_concentration"
+            style="@style/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="50%" />
+    </LinearLayout>
+
+</LinearLayout>
