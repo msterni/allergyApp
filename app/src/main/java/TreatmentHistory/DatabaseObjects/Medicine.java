@@ -10,12 +10,9 @@ public class Medicine {
     public int uid;
     @NonNull
     private String mName;
-    private String mConcentration;
 
-    public Medicine(String name, String concentration) {
+    public Medicine(String name) {
         this.mName = name;
-        this.mConcentration = concentration;
     }
     public String getName(){return this.mName;}
-    public String getConcentration() {return mConcentration;}
 }

@@ -15,38 +15,35 @@ import TreatmentHistory.Converters;
 import TreatmentHistory.DatabaseObjects.Medicine;
 import TreatmentHistory.MedicineListAdapter;
 import TreatmentHistory.MedicineViewModel;
+import TreatmentHistory.RequestCodes;
 
-public class MedicineListActivity extends AppCompatActivity{
+public class ListMedicineActivity extends AppCompatActivity{
     private MedicineViewModel mMedicineViewModel;
-    private Converters con;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        mMedicineViewModel = ViewModelProviders.of(this).get(MedicineViewModel.class);
-        this.con = new Converters();
+        setContentView(R.layout.activity_list);
 
-        setSupportActionBar(findViewById(R.id.toolbar));
-        RecyclerView recyclerView =findViewById(R.id.recyclerview);
+        RecyclerView recyclerView = findViewById(R.id.rec_view_item);
         final MedicineListAdapter adapter = new MedicineListAdapter(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        mMedicineViewModel = ViewModelProviders.of(this).get(MedicineViewModel.class);
         mMedicineViewModel.getAllMedicine().observe(this, adapter::setMedicine);
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> startActivityForResult(
-                new Intent(MedicineListActivity.this,
-                        NewMedicineActivity.class),
-                2));
+                new Intent(ListMedicineActivity.this, NewMedicineActivity.class),
+                RequestCodes.NewMedicine)
+        );
     }
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode,resultCode,data);
         if (requestCode == 2 && resultCode == RESULT_OK){
-            String[] unpacked = this.con.unpackStrings(data.getStringExtra("new_medicine"));
-            String name = unpacked[0];
-            String conc = unpacked[1];
-            Medicine medicine = new Medicine(name, conc);
+            String name = data.getStringExtra("new_medicine");
+            Medicine medicine = new Medicine(name);
             mMedicineViewModel.insert(medicine);
         }
         else {

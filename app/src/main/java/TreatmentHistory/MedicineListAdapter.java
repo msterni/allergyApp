@@ -16,12 +16,10 @@ import TreatmentHistory.DatabaseObjects.Medicine;
 public class MedicineListAdapter extends RecyclerView.Adapter<MedicineListAdapter.MedicineViewHolder>{
     class MedicineViewHolder extends RecyclerView.ViewHolder{
         private final TextView medicineNameView;
-        private final TextView medicineConcView;
 
         private MedicineViewHolder(View itemView) {
             super(itemView);
             medicineNameView = itemView.findViewById(R.id.recycler_medicine_list_name);
-            medicineConcView = itemView.findViewById(R.id.recycler_medicine_list_concentration);
         }
     }
 
@@ -40,7 +38,7 @@ public class MedicineListAdapter extends RecyclerView.Adapter<MedicineListAdapte
 
     @Override
     public MedicineViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = mInflater.inflate(R.layout.recyclerview_medicine, parent, false);
+        View itemView = mInflater.inflate(R.layout.recyclerview_item_medicine, parent, false);
         return new MedicineViewHolder(itemView);
     }
 
@@ -48,7 +46,6 @@ public class MedicineListAdapter extends RecyclerView.Adapter<MedicineListAdapte
     public void onBindViewHolder(MedicineViewHolder holder, int position) {
         Medicine med = medList.get(position);
         holder.medicineNameView.setText(med.getName());
-        holder.medicineConcView.setText(med.getConcentration());
     }
 
     @Override

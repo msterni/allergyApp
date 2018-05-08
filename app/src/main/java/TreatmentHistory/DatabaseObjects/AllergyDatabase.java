@@ -43,7 +43,7 @@ public abstract class AllergyDatabase extends RoomDatabase {
             super.onOpen(db);
             // If you want to keep the data through app restarts,
             // comment out the following line.
-//            new AddOneMedicine(INSTANCE).execute();
+            new AddOneMedicine(INSTANCE).execute();
         }
     };
 
@@ -57,8 +57,14 @@ public abstract class AllergyDatabase extends RoomDatabase {
         }
         @Override
         protected Void doInBackground(final Void... params){
-            medDao.insert(new Medicine("Medicine Name", "50%"));
-            injDao.insert(new Injection(1,0.1,"2017-11-11"));
+            medDao.insert(new Medicine("Purethal Trawy"));
+            medDao.insert(new Medicine("Allergovit Bylica"));
+            injDao.insert(new Injection(1,0.1,"2016-12-15"));
+            injDao.insert(new Injection(1,0.2,"2016-12-22"));
+            injDao.insert(new Injection(1,0.2,"2017-01-18"));
+            injDao.insert(new Injection(2,0.1,"2017-01-23"));
+            injDao.insert(new Injection(2,0.1,"2017-02-15"));
+            injDao.insert(new Injection(2,0.2,"2017-02-21"));
             return null;
         }
     }

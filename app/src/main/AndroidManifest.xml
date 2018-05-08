@@ -20,6 +20,7 @@
         </activity>
         <activity android:name="TreatmentHistory.Activities.NewInjectionActivity" />
         <activity android:name="TreatmentHistory.Activities.NewMedicineActivity" />
-        <activity android:name="TreatmentHistory.Activities.MedicineListActivity" />
+        <activity android:name="TreatmentHistory.Activities.ListMedicineActivity" />
+        <activity android:name="TreatmentHistory.Activities.ListInjectionActivity" />
     </application>
 </manifest>

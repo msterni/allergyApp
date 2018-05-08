@@ -27,7 +27,7 @@ public class InjectionListAdapter extends RecyclerView.Adapter<InjectionListAdap
     }
 
     private final LayoutInflater mInflater;
-    private List<Injection> mInjections; // Cached copy of injections
+    private List<Injection> mInjections;
     private List<Medicine> mMedicine;
 
     public InjectionListAdapter(Context context) {
@@ -36,7 +36,7 @@ public class InjectionListAdapter extends RecyclerView.Adapter<InjectionListAdap
 
     @Override
     public InjectionViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = mInflater.inflate(R.layout.recyclerview_item, parent, false);
+        View itemView = mInflater.inflate(R.layout.recyclerview_item_injection, parent, false);
         return new InjectionViewHolder(itemView);
     }
 

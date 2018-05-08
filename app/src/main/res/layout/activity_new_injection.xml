@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+<android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/new_record_view"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -7,26 +8,32 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TableLayout
+        android:id="@+id/tableLayout2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
+        android:layout_height="177dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="88dp"
+        android:stretchColumns="1"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp">
+
             <TextView
+                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="@string/medicine_string"
-                android:id="@+id/textView" />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <Spinner
                 android:id="@+id/edit_medicine"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:spinnerMode="dialog" />
+                android:spinnerMode="dropdown" />
         </TableRow>
 
         <TableRow
@@ -35,17 +42,17 @@
             android:layout_margin="10dp">
 
             <TextView
+                android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="@string/dosage_string"
-                android:id="@+id/textView2" />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
+                android:id="@+id/edit_dosage"
                 android:layout_width="match_parent"
-                android:inputType="numberDecimal"
                 android:layout_height="wrap_content"
-                android:id="@+id/edit_dosage" />
+                android:inputType="numberDecimal" />
         </TableRow>
 
         <TableRow
@@ -54,35 +61,30 @@
             android:layout_margin="10dp">
 
             <TextView
+                android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="@string/date_string"
-                android:id="@+id/textView3" />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
+                android:id="@+id/edit_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="true"
+                android:ems="10"
                 android:focusable="true"
                 android:inputType="date"
-                android:ems="10"
-                android:id="@+id/edit_date"
                 tools:ignore="LabelFor" />
         </TableRow>
     </TableLayout>
 
-    <LinearLayout
-        android:orientation="horizontal"
+    <Button
+        android:id="@+id/button_save"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/add_string"
-            android:id="@+id/button_save" />
-
-    </LinearLayout>
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/add_string"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout2"
+        tools:layout_editor_absoluteX="148dp" />
+</android.support.constraint.ConstraintLayout>

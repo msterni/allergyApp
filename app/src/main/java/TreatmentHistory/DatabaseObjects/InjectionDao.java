@@ -9,7 +9,7 @@ import java.util.List;
 @Dao
 public interface InjectionDao {
 
-    @Query("SELECT * from injection_table ORDER BY medicine ASC")
+    @Query("SELECT * from injection_table order by date DESC")
     LiveData<List<Injection>> getInjections();
 
     @Insert

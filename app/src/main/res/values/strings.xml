@@ -12,4 +12,5 @@
     <string name="medicine_name">Name</string>
     <string name="medicine_concentration">Concentration</string>
     <string name="medicine_list">List of Medicine</string>
+    <string name="injection_list">Injections</string>
 </resources>

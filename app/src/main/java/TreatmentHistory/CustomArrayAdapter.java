@@ -42,15 +42,9 @@ public class CustomArrayAdapter extends ArrayAdapter<String>{
 
     private View createItemView(int position, View convertView, ViewGroup parent){
         final View view = mInflater.inflate(mResource, parent, false);
-
         TextView medName = (TextView) view.findViewById(R.id.med_name_spinner);
-        TextView medConc = (TextView) view.findViewById(R.id.med_conc_spinner);
-
         Medicine medData = items.get(position);
-
         medName.setText(medData.getName());
-        medConc.setText(medData.getConcentration());
-
         return view;
     }
 }
